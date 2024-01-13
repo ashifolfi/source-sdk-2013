@@ -21,6 +21,9 @@ $Include "$SRCDIR\game\protobuf_include.vpc"
 // Mapbase stuff
 $Include "$SRCDIR\game\client\client_mapbase.vpc"	 [$MAPBASE]
 
+// ImGui
+$Include "$SRCDIR\imgui\imgui_system.vpc"
+
 $Configuration	"Debug"
 {
 	$General

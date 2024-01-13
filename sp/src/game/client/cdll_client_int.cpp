@@ -151,6 +151,8 @@
 #include "vscript_client.h"
 #endif
 
+#include "imgui/imgui_system.h"
+
 extern vgui::IInputInternal *g_InputInternal;
 
 //=============================================================================
@@ -1134,6 +1136,9 @@ int CHLClient::Init( CreateInterfaceFn appSystemFactory, CreateInterfaceFn physi
 	CommandLine()->AppendParm( "+r_hunkalloclightmaps", "0" );
 #endif
 
+	// Initialize ImGui
+	g_pImguiSystem->Init();
+
 	return true;
 }
 
@@ -1208,6 +1213,9 @@ void CHLClient::PostInit()
 //-----------------------------------------------------------------------------
 void CHLClient::Shutdown( void )
 {
+	// Shutdown ImGui
+	g_pImguiSystem->Shutdown();
+	
     if (g_pAchievementsAndStatsInterface)
     {
         g_pAchievementsAndStatsInterface->ReleasePanel();
