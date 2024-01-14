@@ -1,4 +1,8 @@
 # Engine Tool Development
+
+> [!NOTE]
+> This is WIP documentation and is not accurately reflective of how these work! This feature is still being worked on and documented at this time.
+
 Engine tools are very undocumented and thus extremely difficult to make, these notes aim to assist with this. These notes, alongside the sample code, detail everything I found that's required to create a barebones functional tool.
 
 ## Anatomy of a tool
