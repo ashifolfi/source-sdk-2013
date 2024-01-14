@@ -68,6 +68,7 @@ including radial fog, rope code, and treesway)
 - https://github.com/DeathByNukes/source-sdk-2013 (VBSP manifest fixes)
 - https://github.com/entropy-zero/source-sdk-2013 (skill_changed game event)
 - https://github.com/Nbc66/source-sdk-2013-ce/tree/v142 (Base for VS2019 toolset support)
+
 **sources used in this fork:**
 - https://github.com/Source-SDK-Resources/source-2013-imgui (ImGui support)
 
