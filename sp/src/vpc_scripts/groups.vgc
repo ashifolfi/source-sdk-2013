@@ -24,6 +24,7 @@ $Group "game"
 	"vgui_controls"
 	"vscript"
 	"responserules"
+	"testingtool" // todo(tools,build): Remove and move to a more proper group
 }
 
 $Group "shaderdlls"

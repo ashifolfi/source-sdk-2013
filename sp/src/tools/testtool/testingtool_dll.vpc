@@ -1,0 +1,40 @@
+//================//
+// Testing Tool
+//================//
+
+$Macro SRCDIR	"..\.."
+
+$Macro OUTBINDIR	"$SRCDIR\..\game\bin\tools"
+$Macro OUTBINNAME	"testtool"
+
+$Include "$SRCDIR\vpc_scripts\source_dll_base.vpc"
+
+$Configuration
+{
+	$Compiler
+	{
+		$AdditionalIncludeDirectories		"$BASE, $SRCDIR\public, $SRCDIR\thirdparty, $SRCDIR\imgui"
+		$PreprocessorDefinitions			"$BASE"
+	}
+
+	$Linker
+	{
+		$AdditionalDependencies				"$BASE"
+	}
+}
+
+
+$Project "testtool"
+{
+	$Folder "Source Files"
+	{
+		$File "testingtool.cpp"
+		$File "tooldictionary.cpp"
+	}
+
+	$Folder "Public Header Files"
+	{
+		$File "testingtool.h"
+		$File "tooldictionary.h"
+	}
+}
