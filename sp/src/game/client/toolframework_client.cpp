@@ -9,6 +9,7 @@
 #include "igamesystem.h"
 #include "tier1/KeyValues.h"
 #include "toolframework/iclientenginetools.h"
+#include "toolframework/itoolframework.h"
 #include "client_factorylist.h"
 #include "iviewrender.h"
 #include "materialsystem/imaterialvar.h"
@@ -65,6 +66,7 @@ bool CToolFrameworkClient::Init()
 	FactoryList_Retrieve( list );
 
 	m_pTools = ( IClientEngineTools * )list.appSystemFactory( VCLIENTENGINETOOLS_INTERFACE_VERSION, NULL );
+
 	return ( m_pTools != NULL );
 }
 

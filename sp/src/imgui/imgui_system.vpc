@@ -1,12 +1,9 @@
-
-$Macro IMGUI_DIR "$SRCDIR\imgui"
-
 $Configuration
 {
 	$Compiler
 	{
-		$PreprocessorDefinitions	"$BASE;IMGUI_DISABLE_INCLUDE_IMCONFIG_H;IMGUI_USER_CONFIG=\$QUOTEimgui/imconfig_source.h\$QUOTE"
-		$AdditionalIncludeDirectories	"$BASE;$IMGUI_DIR;$IMGUI_DIR/thirdparty"
+		$PreprocessorDefinitions	"$BASE;IMGUI_DISABLE_INCLUDE_IMCONFIG_H;IMGUI_USER_CONFIG=$QUOTEimconfig_source.h$QUOTE"
+		$AdditionalIncludeDirectories	"$BASE;$SRCDIR/imgui;$SRCDIR/thirdparty;$SRCDIR/thirdparty/imgui"
 	}
 }
 
@@ -14,16 +11,16 @@ $Project
 {
 	$Folder "Source Files"
 	{
-		$File "$IMGUI_DIR/imgui/imgui_impl_source.cpp"
-		$File "$IMGUI_DIR/imgui/imgui_system.cpp"
-		
+		$File "$SRCDIR/imgui/imgui_impl_source.cpp"
+		$File "$SRCDIR/imgui/imgui_system.cpp"
+
 		$Folder "ImGUI"
 		{
-			$File "$IMGUI_DIR/thirdparty/imgui/imgui.cpp" \
-					"$IMGUI_DIR/thirdparty/imgui/imgui_demo.cpp" \
-					"$IMGUI_DIR/thirdparty/imgui/imgui_draw.cpp" \
-					"$IMGUI_DIR/thirdparty/imgui/imgui_tables.cpp" \
-					"$IMGUI_DIR/thirdparty/imgui/imgui_widgets.cpp"
+			$File "$SRCDIR/thirdparty/imgui/imgui.cpp" \
+					"$SRCDIR/thirdparty/imgui/imgui_demo.cpp" \
+					"$SRCDIR/thirdparty/imgui/imgui_draw.cpp" \
+					"$SRCDIR/thirdparty/imgui/imgui_tables.cpp" \
+					"$SRCDIR/thirdparty/imgui/imgui_widgets.cpp"
 			{
 				$Configuration
 				{
@@ -38,10 +35,10 @@ $Project
 
 	$Folder "Header Files"
 	{
-		$File "$IMGUI_DIR/imgui/imconfig_source.h"
-		$File "$IMGUI_DIR/imgui/imgui_impl_source.h"
-		$File "$IMGUI_DIR/imgui/imgui_system.h"
-		$File "$IMGUI_DIR/imgui/imgui_window.h"
+		$File "$SRCDIR/imgui/imconfig_source.h"
+		$File "$SRCDIR/imgui/imgui_impl_source.h"
+		$File "$SRCDIR/imgui/imgui_system.h"
+		$File "$SRCDIR/imgui/imgui_window.h"
 	}
 }
 

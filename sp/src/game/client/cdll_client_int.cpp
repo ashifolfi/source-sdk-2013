@@ -151,7 +151,7 @@
 #include "vscript_client.h"
 #endif
 
-#include "imgui/imgui_system.h"
+#include "imgui_system.h"
 
 extern vgui::IInputInternal *g_InputInternal;
 
