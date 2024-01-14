@@ -77,6 +77,8 @@ sp/src/game/server/Release_mod_episodic/
 sp/src/game/server/Release_mod_hl2/
 sp/src/*/Debug/
 sp/src/*/Release/
+sp/src/vgui2/vgui_controls/Debug/
+sp/src/responserules/runtime/Debug/
 sp/game/*.dll
 sp/game/*.pdb
 sp/game/*.exe
@@ -88,6 +90,22 @@ sp/src/materialsystem/*.dll
 sp/src/materialsystem/*.pdb
 sp/src/vgui2/*.dll
 sp/src/vgui2/*.pdb
+sp/src/lib/public/*.pdb
+sp/game/bin/*.dll
+sp/game/bin/tools/*.dll
+sp/game/bin/*.pdb
+sp/game/bin/tools/*.pdb
+sp/src/tools/*/Debug/
+sp/game/bin/*.exe
+sp/game/*/GameState.txt
+sp/game/*/ep1_gamestats.dat
+sp/game/*/imgui.ini
+sp/game/*/modelsounds.cache
+sp/game/*/stats.txt
+sp/game/*/voice_ban.dt
+sp/game/*/cfg/vmt.txt
+sp/game/*/cfg/commedit.txt
+sp/game/*/cfg/server_blacklist.txt
 
 # Build support files
 sp/src/devtools/gcc9+support.o
