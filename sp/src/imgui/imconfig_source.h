@@ -44,7 +44,7 @@ IMGUI_API uint64		ImFileWrite( const void *data, uint64 size, uint64 count, ImFi
 // Compatibility checks of arguments and formats done by clang and GCC will be disabled in order to support the extra formats provided by stb_sprintf.h.
 //#define IMGUI_USE_STB_SPRINTF
 
-
+#include "mathlib/vector.h" // mapbase requires us to do this
 #include "mathlib/vector2d.h"
 #include "mathlib/vector4d.h"
 #define IM_VEC2_CLASS_EXTRA												\
@@ -55,6 +55,13 @@ IMGUI_API uint64		ImFileWrite( const void *data, uint64 size, uint64 count, ImFi
 	ImVec4( const Vector4D& f ) : x( f.x ), y( f.y ), z( f.z ), w( f.w ) {}	\
 	operator Vector4D() const { return Vector4D( x, y, z, w ); }
 
+// fuck you fuck you fuck you fuck you fuck you fuck you
+// GRRRRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHH
+#include "strtools.h"
+#ifdef strncpy
+#undef strncpy
+#define strncpy Q_strncpy
+#endif
 
 class IMaterial;
 #define ImTextureID IMaterial*

@@ -21,6 +21,8 @@
 *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 *  SOFTWARE.
 *********************************************************************************/
+#include "cbase.h"
+
 #include "imgui_system.h"
 #include "imgui_window.h"
 
@@ -379,7 +381,9 @@ void CDearImGuiSystem::UnregisterWindowFactories( IImguiWindow **ppWindows, int 
 //---------------------------------------------------------------------------------------//
 IImguiWindow *CDearImGuiSystem::FindWindow( const char *szName )
 {
-	if ( auto it = m_ImGuiWindows.Find( szName ); it != m_ImGuiWindows.InvalidIndex() )
+	// note: We don't have C++17 in this file apparently so we have to init outside of if
+	auto it = m_ImGuiWindows.Find(szName);
+	if ( it != m_ImGuiWindows.InvalidIndex() )
 		return m_ImGuiWindows[it];
 	return nullptr;
 }
@@ -612,18 +616,21 @@ CON_COMMAND_F( imgui_toggle_menu, "Toggles the imgui menu bar", FCVAR_CLIENTDLL 
 		g_ImguiSystem.PopInputContext();
 }
 
-template <bool ON>
-void CC_ToggleMenu( const CCommand &args )
+// hack: fuck you I can't template this
+void CC_EnableMenu( const CCommand &args )
 {
-	g_ImguiSystem.SetDrawMenuBar( ON );
-	if constexpr ( ON )
-		g_ImguiSystem.PushInputContext();
-	else
-		g_ImguiSystem.PopInputContext();
+	g_ImguiSystem.SetDrawMenuBar( true );
+	g_ImguiSystem.PushInputContext();
 }
 
-static ConCommand imgui_menu_start( "+imgui_menu", CC_ToggleMenu<true>, "Toggles the menu bar and input", FCVAR_CLIENTDLL );
-static ConCommand imgui_menu_end( "-imgui_menu", CC_ToggleMenu<false>, "Toggles the menu bar and input", FCVAR_CLIENTDLL );
+void CC_DisableMenu( const CCommand &args )
+{
+	g_ImguiSystem.SetDrawMenuBar( false );
+	g_ImguiSystem.PopInputContext();
+}
+
+static ConCommand imgui_menu_start( "+imgui_menu", CC_EnableMenu, "Toggles the menu bar and input", FCVAR_CLIENTDLL );
+static ConCommand imgui_menu_end( "-imgui_menu", CC_DisableMenu, "Toggles the menu bar and input", FCVAR_CLIENTDLL );
 
 CON_COMMAND_F( imgui_show_demo, "Shows the imgui demo", FCVAR_CLIENTDLL )
 {

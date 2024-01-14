@@ -21,6 +21,8 @@
 *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 *  SOFTWARE.
 *********************************************************************************/
+#include "cbase.h"
+
 #include "imgui_impl_source.h"
 
 #include "KeyValues.h"
