@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 
-#include "gameconsole.h"
+#include "gameconsole.hpp"
 
 #include "convar.h"
 #include "convar_serverbounded.h"

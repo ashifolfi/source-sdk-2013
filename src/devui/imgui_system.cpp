@@ -23,13 +23,13 @@
 *********************************************************************************/
 #include "cbase.h"
 
-#include "imgui_system.h"
-#include "imgui_window.h"
+#include "imgui_system.hpp"
+#include "imgui_window.hpp"
 
 #include "filesystem.h"
 #include "fmtstr.h"
 #include "imgui.h"
-#include "imgui_impl_source.h"
+#include "imgui_impl_source.hpp"
 #include "imgui_internal.h"
 #include "inputsystem/iinputsystem.h"
 #include "materialsystem/imaterialsystem.h"

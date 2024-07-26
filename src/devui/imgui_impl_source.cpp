@@ -23,7 +23,7 @@
 *********************************************************************************/
 #include "cbase.h"
 
-#include "imgui_impl_source.h"
+#include "imgui_impl_source.hpp"
 
 #include "KeyValues.h"
 #include "filesystem.h"

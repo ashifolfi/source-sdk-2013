@@ -45,7 +45,7 @@ target_include_directories( devui
 target_compile_definitions( devui
 	PRIVATE
 		IMGUI_DISABLE_INCLUDE_IMCONFIG_H
-		IMGUI_USER_CONFIG="imconfig_source.h"
+		IMGUI_USER_CONFIG="imconfig_source.hpp"
 )
 
 target_link_libraries( devui
