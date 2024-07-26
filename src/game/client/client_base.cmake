@@ -553,6 +553,10 @@ set( CLIENT_BASE_SOURCE_FILES
 	"${CLIENT_BASE_DIR}/toolframework_client.cpp"
 	"${CLIENT_BASE_DIR}/toolframework_client.h"
 
+	# DevUI Panels
+	"${CLIENT_BASE_DIR}/devui_panels/gameconsole.cpp"
+	"${CLIENT_BASE_DIR}/devui_panels/gameconsole.hpp"
+
 	# Header Files
 	"${CLIENT_BASE_DIR}/animationlayer.h"
 	"${CLIENT_BASE_DIR}/baseanimatedtextureproxy.h"
