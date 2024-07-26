@@ -1210,6 +1210,7 @@ function( target_use_client_base target EXCLUDE_SOURCES )
 			vgui_controls
 			"${LIBPUBLIC}/vtf${CMAKE_STATIC_LIBRARY_SUFFIX}"
 			steam_api
+			devui
 
 			#"$<${IS_POSIX}:${LIBCOMMON}/libcrypto${CMAKE_STATIC_LIBRARY_SUFFIX}>"
 
