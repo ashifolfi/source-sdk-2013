@@ -59,7 +59,7 @@ public:
 	virtual void	ServerPreSetupVisibility() {}
 
 	// Used to allow the tool to spawn different entities when it's active
-	virtual const char *GetEntityData( const char *pActualEntityData ) { return ""; }
+	virtual const char *GetEntityData( const char *pActualEntityData ) { return pActualEntityData; }
 
 	// Client calls:
 			// Level init, shutdown
